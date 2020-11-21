@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/primeicons/primeicons.css";
+@import "../node_modules/primeng/resources/themes/saga-blue/theme.css";
+@import "../node_modules/primeng/resources/primeng.min.css";
+@import "../node_modules/primeflex/primeflex.css";
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #404C51;
+}
+
+label{
+    font-weight: bold;
+    margin:2px 5px
+}
+
+.col-data{
+    width: 120px;
+    text-align: center;
+}
+
+.col-valor{
+    width: 120px;
+    text-align: right !important;
+}
+
+.col-accoes{
+    width: 120px;
+    text-align: center;
+}
+
+.col-accoes a{
+    margin: 0 2px;
+}
+
+@media(min-width:1200px){
+    .container{
+        width: 1170px;
+        margin: 0 auto;
+    }
+}
+
