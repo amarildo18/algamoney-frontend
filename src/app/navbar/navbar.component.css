@@ -6,3 +6,37 @@
 .navbar-toggle{
     color: #fff;
 }
+
+.navbar-menu{
+    background: #3a3633;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 210px;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    list-style: none;
+}
+
+.navbar-menu li:first-child{
+    font-weight: bold;
+    color: #fff;
+    padding: 15px;
+    border-bottom: 1px solid #525151;
+    
+}
+
+.navbar-menu li:not(:first-child){
+    padding: 15px;
+}
+
+.navbar-menu li:not(:first-child) a{
+    color: #c0bbb7;
+    text-decoration: none;
+}
+
+.navbar-menu li:not(:first-child) a:hover{
+    color: #fff;
+}
