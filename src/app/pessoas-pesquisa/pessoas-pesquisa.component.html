@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="p-grid">
+    <div class="p-col-12">
+      <h1>Pessoas</h1>
+    </div>
+    <div class="p-col-12 p-fluid">
+      <label for="">Nome</label>
+      <input type="text" pInputText class="p-inputtext-sm" appCampoColorido [cor]="'transparent'" #campo="campoColorido">
+    </div>
+    <div class="p-col-12">
+      <button pButton class="p-button-sm" label="pesquisar"></button>
+      <!-- <button pButton class="p-button-sm" label="colorir" (click)="campo.colorir()"></button>
+      <button pButton class="p-button-sm" label="descolorir" (click)="campo.descolorir()"></button> -->
+    </div>
+  </div>
+
+  <!--Tabela de pessoas -->
+  <div class="p-grid">
+    <div class="p-col-12">
+      <p-table [value]="pessoas" [paginator]="true" [rows]="2" [responsive]="true">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Nome</th>
+                <th>Cidade</th>
+                <th>Estado</th>
+                <th>Status</th>
+                <th>Accções</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-pessoas>
+            <tr>
+                <td>{{pessoas.nome}}</td>
+                <td>{{pessoas.cidade}}</td>
+                <td>{{pessoas.estado}}</td>
+                <td>{{pessoas.status}}</td>
+                <td class="col-accoes">
+                  <a href="#" icon="pi pi-pencil" pButton pTooltip="Editar" tooltipPosition="top"></a>
+                  <button icon="pi pi-trash" pButton pTooltip="Remover" tooltipPosition="top"></button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+    </div>
+
+    <!--botao nova pessoa-->
+    <div class="p-col-12">
+      <button pButton class="p-button-sm" label="Nova Pessoa"></button>
+    </div>
+  </div>
+</div>
