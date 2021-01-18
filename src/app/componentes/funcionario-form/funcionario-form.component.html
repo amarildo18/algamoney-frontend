@@ -1,0 +1,38 @@
+
+{{usuarioForm.valid}}
+
+<div class="container">
+  <div class="alert alert-danger" *ngIf="usuarioForm.invalid && usuarioForm.touched">
+    Preencha devidamente os campos
+  </div>
+  <div class="">
+    <form #usuarioForm="ngForm" (ngSubmit)="salvar(usuarioForm)">
+      <div class="p-col-12 p-fluid">
+        <input type="text" class="form-control" [(ngModel)]="cliente.nome"
+        name="nome" placeholder="Nome" pInputText ngModel
+        required minlength="5" #nome="ngModel"
+        autocomplete="off"
+      >
+      <div *ngIf="nome.hasError('required')">O nome é obrigatório</div>
+      <div *ngIf="nome.hasError('minlength')">o nome deve conter 5 caracteres no minimo</div>
+      </div>
+      <div class="p-col-12 p-fluid">
+        <input type="email" class="form-control" [(ngModel)]="cliente.email"
+        name="email" placeholder="email" pInputText ngModel email required
+      >
+      </div>
+      <div class="p-col-12 p-fluid form-group">
+        <label class="form-control-label">Profissão</label>
+        <select name="" id="" class="form-control" name="profissao" [(ngModel)]="cliente.profissao" autocomplete="off">
+          <option *ngFor="let profissao of profissoes" [value]="profissao">{{profissao}}</option>
+        </select>
+        <!-- <input type="email" class="form-control" [(ngModel)]="cliente.profissao"
+        name="profissao" placeholder="profissao" pInputText ngModel required> -->
+      </div>
+      <div class="p-col-12">
+        <button type="submit" [disabled]="usuarioForm.invalid" class="btn btn-primary" label="enviar" pButton></button>
+      </div>
+
+    </form>
+  </div>
+</div>
