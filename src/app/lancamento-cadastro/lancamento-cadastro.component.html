@@ -4,12 +4,16 @@
       <div class="p-col-12">
         <h2>Novo Lançamento</h2>
       </div>
-      <div class="p-col-6 p-md-4 p-fluid">
-        <label>Vencimento</label>
-        <input type="text" pInputText class="p-inputtext-sm">
+      <div class="p-col-12">
+        <p-selectButton [options]="options" class="p-button-sm" #tipo></p-selectButton>
       </div>
       <div class="p-col-6 p-md-4 p-fluid">
-        <label>Recebimento</label>
+        <label>Vencimento</label>
+        <input type="date" pInputText class="p-inputtext-sm">
+        <!-- <p-calendar></p-calendar> -->
+      </div>
+      <div class="p-col-6 p-md-4 p-fluid">
+        <label>{{ tipo.value == 'RECEITA'? 'Recebimento' : 'Pagamento'}}</label>
         <input type="text" pInputText class="p-inputtext-sm">
       </div>
       <div class="p-fluid p-md-10 p-fluid">
@@ -22,7 +26,11 @@
       </div>
       <div class="p-col-12 p-md-6 p-fluid">
         <label>Categoria</label>
-        <input type="text" pInputText class="p-inputtext-sm">
+        <!-- <input type="text" pInputText class="p-inputtext-sm"> -->
+        <p-dropdown [optionValue]="'valor'" optionLabel="label" [options]="categorias"></p-dropdown>
+        <!-- <select>
+          <option *ngFor="let categoria of categorias" value="{{categoria.value}}"></option>
+        </select> -->
       </div>
       <div class="p-col-12 p-md-6 p-fluid">
         <label>Pessoa</label>

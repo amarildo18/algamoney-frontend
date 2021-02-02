@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule} from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -18,6 +18,8 @@ import { CampoColoridoDirective } from './directivas/campo-colorido.directive';
 import { FuncionarioFormComponent } from './componentes/funcionario-form/funcionario-form.component';
 import { FormsModule } from '@angular/forms';
 import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-cadastro.component';
+import { CalendarModule } from 'primeng/calendar';
+import { SelectButtonModule } from 'primeng/selectbutton';
 
 @NgModule({
   declarations: [
@@ -31,15 +33,16 @@ import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-ca
   ],
   imports: [
     BrowserModule,
-
     TabViewModule,
     InputTextModule,
     InputTextareaModule,
     ButtonModule,
+    SelectButtonModule,
     TableModule,
     TooltipModule,
     DropdownModule,
     FormsModule,
+    CalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
